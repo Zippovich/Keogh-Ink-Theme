@@ -55,6 +55,9 @@ fieldset{
 	margin:0 auto;
 	background:url(images/bg-wrapper.png) no-repeat;
 }
+.gallery-page #wrapper {
+    background-image: url(images/bg-wrapper-2.png)
+}
 #bg {
 	overflow: hidden;
 	position: fixed;
@@ -149,6 +152,9 @@ fieldset{
 	float:right;
 	margin: -7px 0 0;
 }
+.gallery-page .sidebar {
+    margin-top: -61px
+}
 .sidebar .contact {
 	width:100%;
 	overflow:hidden;
@@ -169,6 +175,9 @@ fieldset{
 	position:relative;
 	height:46px;
 }
+.gallery-page .sidebar .title {
+    height: 40px
+}
 .sidebar .title h1 {
 	font-size:57px;
 	line-height:57px;
@@ -177,6 +186,10 @@ fieldset{
 	position:absolute;
 	left:0;
 	top:-2px;
+}
+.gallery-page .sidebar .title h1 {
+    color: #3b185c;
+    font-size: 40px;
 }
 .sidebar .info {
 	padding: 197px 0 0;
@@ -201,6 +214,19 @@ fieldset{
 	padding: 0 1px 0 0;
 }
 .sidebar .info a {color:#6d6e71;}
+.sidebar-text {
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+    font-weight: bold;
+    height: 56px;
+    margin: 2px 0 15px;
+    line-height: 16px;
+    vertical-align: middle;
+    padding: 0
+}
+
 .content {
 	width:563px;
 	float:left;
@@ -367,4 +393,60 @@ fieldset{
 .nav-next, .nav-prev
 {
     top:332px !important;
+}
+
+/* Gallery */
+.gallery-page .content .text-box-holder .holder {
+    padding-right: 0;
+    margin-left: -10px
+}
+.ngg-thumbs {
+    overflow: hidden;
+    list-style: none;
+    padding: 0 0 0 14px;
+    margin: 0
+}
+.ngg-thumbs li {
+    float: left;
+    width: 87px;
+    height: 61px;
+    margin: 0 7px 6px 0;
+    text-align: center
+}
+.ngg-singlepic {
+    padding: 0!important;
+    display: inline!important
+}
+.git-wrapper {
+    width: 550px;
+    overflow: hidden
+}
+.git-wrapper ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    height: 440px;
+    list-style: none
+}
+.git-wrapper ul li {
+    position: absolute;
+    top: 0;
+    left: -550px;
+    width: 550px;
+    height: 440px
+}
+.git-wrapper ul li:first-child {
+    left: 0
+}
+.git-wrapper ul li .image-div {
+    line-height: 1px;
+    height: 381px;
+    text-align: center;
+    margin: 0 0 8px
+}
+.git-wrapper ul li .image-description {
+    padding: 0 0 0 65px;
+    background: url('images/image-desc-bg.png') 0 10px no-repeat;
+    color: #5a5a5c;
+    font-size: 24px
 }

@@ -179,3 +179,57 @@ BackgroundStretcher = {
 		}
 	}
 }.init();
+
+$(function() {
+    // Gallery
+    var thumbs = $('.ngg-thumbs a');
+    var lis = $('.gallery-images-table li');
+    $(lis[0]).addClass('curent');
+    thumbs.each(function(index, item) {
+        $(item).click(function(e) {
+            e.preventDefault();
+            if (!$(lis[index]).hasClass('curent')) {
+                var rand = Math.floor((Math.random()*4)+1);
+                switch (rand) {
+                    case 2:
+                        $(lis[index]).css({
+                            'left': 0,
+                            'top': -440
+                        });
+                        break;
+                    case 3:
+                        $(lis[index]).css({
+                            'left': 550,
+                            'top': 0
+                        });
+                        break;
+                    case 4:
+                        $(lis[index]).css({
+                            'left': 0,
+                            'top': 440
+                        });
+                        break;
+                    default:
+                        $(lis[index]).css({
+                            'left': -550,
+                            'top': 0
+                        });
+                }
+                $('.gallery-images-table li.curent').css('z-index', 1).stop().fadeOut(300, function() {
+                    $(this).css({
+                        'left': -500,
+                        'top': 0
+                    }).fadeIn(0);
+                });
+                $(lis[index]).css('z-index', 2);
+                $(lis[index]).stop().animate({
+                    'top': 0,
+                    'left': 0
+                }, 300, function() {
+                    $('.gallery-images-table li.curent').removeClass('curent');
+                    $(this).addClass('curent');
+                });
+            }
+        });
+    });
+});
