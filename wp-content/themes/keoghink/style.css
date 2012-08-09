@@ -1,0 +1,370 @@
+/*
+Theme Name: Twenty Eleven
+Theme URI: http://wordpress.org/extend/themes/twentyeleven
+Author: the WordPress team
+Author URI: http://wordpress.org/
+Description: The 2011 theme for WordPress is sophisticated, lightweight, and adaptable. Make it yours with a custom menu, header image, and background -- then go further with available theme options for light or dark color scheme, custom link colors, and three layout choices. Twenty Eleven comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom "Ephemera" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured "sticky" posts), and special styles for six different post formats.
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: twentyeleven
+*/
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {display:block;}
+figure {
+	padding:0;
+	margin:0;
+}
+html {height:100%;}
+body{
+	margin:0;
+	color:#58595b;
+	font:12px/21px Arial, Helvetica, sans-serif;
+	background:#fff;
+	height:100%;
+}
+img{border-style:none;}
+a{
+	text-decoration:none;
+	color:#000;
+}
+a:hover{text-decoration:underline;}
+input,
+textarea,
+select{
+	font:100% Arial, Helvetica, sans-serif;
+	vertical-align:middle;
+}
+form,
+fieldset{
+	margin:0;
+	padding:0;
+	border-style:none;
+}
+.page {
+	min-height:100%;
+	background:url(images/bg-page.png) 0 100% no-repeat;
+}
+#wrapper {
+	width:920px;
+	padding-left:40px;
+	margin:0 auto;
+	background:url(images/bg-wrapper.png) no-repeat;
+}
+#bg {
+	overflow: hidden;
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
+#bg img {position: absolute;}
+.header {
+	height:1%;
+	padding: 23px 77px 0 0;
+}
+.header:after,
+#main:after {
+	clear:both;
+	display:block;
+	content:"";
+}
+.logo {
+	float:left;
+	width:189px;
+	height:99px;
+	text-indent:-9999px;
+	overflow:hidden;
+	background:url(images/logo.png) no-repeat;
+	margin: 6px 0 0 -22px;
+}
+.logo a {
+	display:block;
+	height:100%;
+}
+.header nav {float:right;}
+.header nav ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-size:10px;
+	height:1%;
+}
+.header nav ul:after {
+	clear:both;
+	display:block;
+	content:"";
+}
+.header nav ul>li {
+	float:left;
+	padding: 0 13px 8px;
+}
+.header nav ul>li:hover,
+.header nav ul>li.current_page_item{
+	background:url(images/bg-nav-hover.png) 50% 18px no-repeat;
+	position:relative;
+}
+.header nav ul ul {
+	position:absolute;
+	left:0;
+	top:28px;
+	width:180px;
+	background:#fff;
+	border:1px solid #000;
+	border-top-color:#fff;
+	height:auto;
+	display:none;
+}
+.header nav ul>li:hover ul {display:block;}
+.header nav ul ul li {
+	float:none;
+	margin:0;
+	padding:0;
+}
+.header nav ul ul li a {
+	display:block;
+	padding:2px 5px;
+}
+.header nav ul ul li:hover a,
+.header nav ul ul li.current_page_item {background:#f1f1f1;}
+.slogan {
+	width:298px;
+	height:11px;
+	text-indent:-9999px;
+	overflow:hidden;
+	background:url(images/text-management.gif) no-repeat;
+	float:left;
+	margin: 5px 0 0 39px;
+}
+#main {
+	width:861px;
+	padding: 0 59px 0 0;
+}
+.sidebar {
+	width:307px;
+	float:right;
+	margin: -7px 0 0;
+}
+.sidebar .contact {
+	width:100%;
+	overflow:hidden;
+	padding-bottom:172px;
+}
+.sidebar .contact img {
+	display:block;
+	margin: 0 0 0 27px;
+}
+.sidebar .contact .tel {
+	float:right;
+	font-size:24px;
+	color:#0b0c0e;
+	margin: 3px 8px 0 0;
+}
+.sidebar .title {
+	overflow:hidden;
+	position:relative;
+	height:46px;
+}
+.sidebar .title h1 {
+	font-size:57px;
+	line-height:57px;
+	color:#808285;
+	margin:0;
+	position:absolute;
+	left:0;
+	top:-2px;
+}
+.sidebar .info {
+	padding: 197px 0 0;
+	width:339px;
+	margin:0 -32px 0 0;
+	font-size:9px;
+	line-height:12px;
+	color:#6d6e71;
+}
+.sidebar .info .logo-sidebar {
+	width:107px;
+	height:64px;
+	text-indent:-9999px;
+	overflow:hidden;
+	background:url(images/logo-sidebar.gif) no-repeat;
+	margin: 0 0 4px auto;
+	display:block;
+}
+.sidebar .info span {
+	display:block;
+	text-align:right;
+	padding: 0 1px 0 0;
+}
+.sidebar .info a {color:#6d6e71;}
+.content {
+	width:563px;
+	float:left;
+	margin: 50px 0 0 -20px;
+}
+.content h2 {
+	background:url(images/bg-title-content.gif) 0 100% no-repeat;
+	margin: 0 0 24px;
+	padding: 0 0 2px 24px;
+	font-size:15px;
+	font-weight:normal;
+	height: 21px;
+}
+.content .text-box {
+	padding: 0 0 15px 0;
+}
+.content .text-box-holder {
+	height:390px;
+	overflow:auto;
+	padding-left:23px;
+}
+.content .text-box-holder .holder {padding-right:65px;}
+.content p {margin: 0 0 2px;}
+.content p strong a {
+	color:#1ab7ea;
+	font-size:14px;
+}
+.content p em {
+	color:#000;
+	font-size:14px;
+}
+.content nav {padding:0 0 21px;}
+.content nav ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	text-align:center;
+	font-size:9px;
+}
+.content nav ul li {
+	display:inline;
+	padding: 0 12px;
+}
+.content nav ul a {color:#fff;}
+.copyright {
+	font-size:10px;
+	color:#000;
+	text-align:center;
+	padding-bottom: 20px;
+}
+.vscroll-bar {
+	width:6px !important;
+}
+.vscroll-slider {
+	background:#808285;
+}
+.vscroll-up,
+.vscroll-down {display:none;}
+.scroll-content {
+	margin: 0 0 0 -23px;
+	padding-left: 23px;
+}
+.imageField {margin: -23px 0 0 -23px;}
+.ico-linkedin {
+	width:24px;
+	height:24px;
+	float:right;
+	text-indent: -9999px;
+	background:url(images/linkedin.png) no-repeat;
+	position:relative;
+}
+
+.testimonial {
+    font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,sans-serif;
+    margin: 0;
+    background: #EDEDED;
+    padding: 10px 13px;
+    position: relative;
+    color: #666;
+    border-radius: 5px;
+    text-shadow: 0 1px 0 #ECFBFF;
+    background-image: linear-gradient(#CEF3FF, #B7EDFF);
+    margin-top: 10px;
+	line-height: 15px;
+   }
+
+.testimonial:before, .testimonial:after {
+    position: absolute;
+    font-size: 80px;
+    line-height: 1;
+    color: #999;
+    font-style: normal;
+    
+    
+}
+
+.testimonial:before {
+    top: 0;
+    left: 10px;
+}
+.testimonial:after {
+    right: 10px;
+    bottom: -0.5em;
+}
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    /*border-top: 15px solid #E7E8E9;  
+    margin: 0 0 0 25px;*/
+    
+    background: url("images/quotebubble.gif") no-repeat scroll left -44px transparent;
+    height: 30px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial_name
+{
+    font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,sans-serif;
+    color: #8D1C1C;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 1 0 0.5em;
+    padding: 0 !important;
+    height: 5px;
+}
+
+.testimonial_name span {
+    font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,sans-serif;
+    color: #295187;
+    font-size: 12px;
+}
+
+.testimonial_text
+{
+    margin-bottom: 10px;
+}
+
+#myGallery_1 h2
+{
+    background: none !important;
+    color: #E7E8E9;
+}
+.panel .panel-overlay, .panel .overlay-background
+{
+    height: 30px !important;
+}
+
+.panel {
+    padding-bottom: 30px;
+    height: 270px!important;
+}
+.strip_wrapper
+{
+    top: 300px!important;
+}
+.pointer
+{
+    top: 289px !important;
+}
+
+.nav-next, .nav-prev
+{
+    top:332px !important;
+}
